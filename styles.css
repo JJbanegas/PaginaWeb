@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+}
+
+html,body{
+    height: 100%;
+}
+
+body{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    background-color:black;
+}
+
+p{
+    margin: 0.5em 0 0.5em 0;
+}
+
+header{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgb(133,39,40);
+    background: linear-gradient(90deg, rgba(133,39,40,1) 0%, rgba(74,45,61,1) 35%, rgba(14,51,81,1) 100%);
+    padding: 1em;
+}
+
+nav a:visited,
+nav a:link{
+    color: white;
+    text-decoration: none;    
+}
+
+nav>ul{
+    display: inline;
+    padding: 0;
+}
+
+nav>ul>li{
+    display: inline-block;
+    list-style: none;
+    margin: 0 5px 0 5px;
+}
+
+main{
+    display: block;
+    background-image: url("imagenes/fondovaldo.jpg");
+    background-position: center;
+    background-size:  100%;;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    height: 85%;
+
+}
+
+footer{
+    padding: 1em;
+}
+
+aside,article{
+    padding: 4em;
+}
+
+aside{
+    padding: 1em;
+}
+
+aside>img{
+    max-width: 70%;
+}
+
+article{
+    width: 75%;
+}
+
+@media only screen and (min-width : 768px){
+    main{
+        display: flex;
+    }
+
+    aside{
+        margin-left: 2%;
+    }
+
+    .columns-desktop{
+        display: flex;
+    }
+}
+
+h1{
+    font-size: 5em;
+    margin-top: 0.5em;
+    color: white;
+    text-align: left;
+}
+
+.sub-title{
+    background: rgb(133,39,40);
+    background: linear-gradient(90deg, rgba(133,39,40,1) 0%, rgba(74,45,61,1) 35%, rgba(14,51,81,1) 100%);
+    font-size: 1.5em;
+    padding: 10px;
+    border: solid 2px black;
+}
+
+/* catalogo */
+
+.perifericos{
+    width: 250px;
+    padding: 20px;
+    margin: 10px;
+    background-color: white;
+    border: solid 2px black;
+}
+
+.perifericos>img{
+    width: 100%;
+    height: 75%;
+    object-fit: cover;
+}
+
+.perifericos .titulo{
+    font-weight: bold;
+}
+
+.perifericos .precio{
+    text-align: right;
+}
+
+.perifericos .columnas{
+    width: 100%;
+    display: flex;
+}
+
+.perifericos .columnas div{
+    width: 50%;
+}
+
+.perifericos button{
+    background-color: brown;
+    padding: 10px;
+    border: solid 1px black;
+    border-radius: 10%;
+}
+

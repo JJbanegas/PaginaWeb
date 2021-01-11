@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="catalogo.html">Componentes</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <aside><img src="imagenes/logo.png" alt=""></aside>
+        <article>
+            <h1>orden</h1>
+
+            <div class="perifericos">
+                <img src="" class="">
+                <div class="columnas">
+                    <div class="titulo"></div>
+                    <div class="precio"></div>
+                </div>
+            </div>
+
+            <form action="http://jkorpela.fi/cgi-bin/echo.cgi", method="POST">
+                <div class="input-group">
+                    <div>
+                        <label for="Nombre">Nombre</label>
+                    </div>
+                    <div>
+                        <input type="text" name="Nombre" id="Nombre">
+                    </div>
+
+                    <div>
+                        <label for="Apellido">Apellido</label>
+                    </div>
+                    <div>
+                        <input type="text" name="Apellido" id="Apellido">
+                    </div>
+
+                    <div>
+                        <label for="Edad">Edad</label>
+                    </div>
+                    <div>
+                        <input type="number" name="Edad" id="Edad">
+                    </div>
+
+                </div>
+                <input type="reset" value="Cancelar">
+                <input type="submit" value="Continuar">
+            </form>
+        </article>
+    </main>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="componentes.html">Componentes</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+<script>
+    window.addEventListener("DOMContentLoaded", () =>{
+        const order = localStorage.getItem("order")
+        if(order){
+            const ordenPeriferico = JSON.parse(order)
+            const periferico = document.querySelector(".perifericos")
+            const titulo = periferico.querySelector(".titulo")
+            const precio = periferico.querySelector(".precio")
+
+            titulo.innerText = ordenPeriferico.titulo
+            precio.innerText = ordenPeriferico.precio
+
+            const imagen = periferico.querySelector("img")
+            imagen.setAttribute("src",`imagenes/${ordenPeriferico.id}.png`)
+        }
+    })
+</script>
+</html>
